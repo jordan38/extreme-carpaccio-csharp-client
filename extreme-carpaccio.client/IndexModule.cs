@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace xCarpaccio.client
@@ -21,8 +22,18 @@ namespace xCarpaccio.client
                 }
 
                 var order = this.Bind<Order>();
+                Dictionary<string,decimal> grilletaxe =new Dictionary<string, decimal>();
+
+                grilletaxe.Add("FR",20);
+                grilletaxe.Add("DE",21);
+                grilletaxe.Add("IT",20);
+                grilletaxe.Add("ES",19);
+                grilletaxe.Add("PL", 21);
+
+                Taxe taxes =  new Taxe(grilletaxe);
                 
-                Bill bill = null;
+                Bill bill = new Bill();
+                bill.total = order.CalculerTaxe(taxes.TaxeParCode(order.Country));
                 //TODO: do something with order and return a bill if possible
                 // If you manage to get the result, return a Bill object (JSON serialization is done automagically)
                 // Else return a HTTP 404 error : return Negotiate.WithStatusCode(HttpStatusCode.NotFound);

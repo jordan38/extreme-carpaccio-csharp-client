@@ -8,5 +8,19 @@
         public string Reduction { get; set; }
 
 
+        public decimal CalculerTaxe(decimal taxeParCode)
+        {
+            decimal resultFinal = 0;
+            int index = 0;
+
+            foreach (var produit in Quantities)
+            {
+                decimal prix = Prices[index];
+                decimal result = (prix*produit)*taxeParCode;
+                resultFinal = +result;
+                index = +1;
+            }
+            return resultFinal;
+        }
     }
 }
