@@ -29,9 +29,33 @@ namespace xCarpaccio.client
                 grilletaxe.Add("IT",20);
                 grilletaxe.Add("ES",19);
                 grilletaxe.Add("PL", 21);
+                grilletaxe.Add("RO", 20);
+                grilletaxe.Add("NL", 20);
+                grilletaxe.Add("BE", 24);
+                grilletaxe.Add("EL", 20);
+                grilletaxe.Add("CZ", 19);
+                grilletaxe.Add("PT", 23);
+                grilletaxe.Add("HU", 27);
+                grilletaxe.Add("SE", 23);
+                grilletaxe.Add("AT", 22);
+                grilletaxe.Add("BG", 21);
+                grilletaxe.Add("DK", 21);
+                grilletaxe.Add("FI", 17);
+                grilletaxe.Add("SK", 18);
+                grilletaxe.Add("IE", 21);
+                grilletaxe.Add("HR", 23);
+                grilletaxe.Add("LT", 23);
+                grilletaxe.Add("SI", 24);
+                grilletaxe.Add("LV", 20);
+                grilletaxe.Add("EE", 22);
+                grilletaxe.Add("CY", 21);
+                grilletaxe.Add("LU", 25);
+                grilletaxe.Add("MT", 20);
+
+
 
                 Taxe taxes =  new Taxe(grilletaxe);
-                
+
                 Bill bill = new Bill();
                 bill.total = order.CalculerTaxe(taxes.TaxeParCode(order.Country));
                 //TODO: do something with order and return a bill if possible

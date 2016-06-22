@@ -17,8 +17,8 @@
             {
                 decimal prix = Prices[index];
                 decimal result = (prix*produit)*taxeParCode;
-                resultFinal = +result;
-                index = +1;
+                resultFinal += result;
+                index ++;
             }
             return resultFinal;
         }
