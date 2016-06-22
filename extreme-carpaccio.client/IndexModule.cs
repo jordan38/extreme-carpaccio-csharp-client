@@ -21,6 +21,7 @@ namespace xCarpaccio.client
                 }
 
                 var order = this.Bind<Order>();
+                
                 Bill bill = null;
                 //TODO: do something with order and return a bill if possible
                 // If you manage to get the result, return a Bill object (JSON serialization is done automagically)
